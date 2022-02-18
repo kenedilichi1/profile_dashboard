@@ -1,3 +1,41 @@
 @media only screen and (min-width: 768px) {
-    
+    body{
+        background: linear-gradient(183deg, rgba(3,148,184,1) 6%, rgba(76,150,237,1) 84%);
+    }
+
+
+    #main__container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile__container{
+        background: black;
+        width: 60%;
+    }
+    hr{
+        display: none;
+    }
+}
+
+@media only screen and (min-width:990px){
+    .profile__container{
+        width: 70%;
+        height: 300px;
+        gap: 50px;
+    }
+
+    .paragraph > p, h5{
+        font-size: 1.rem;
+        line-height: 1.8rem;
+    }
+
+    .profile__picture > img{
+        width: 200px;
+        height: 201.2px;
+        border-radius: 50%;
+    }
 }
