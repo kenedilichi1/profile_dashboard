@@ -15,7 +15,9 @@ body{
     
 }
 
-
+a{
+    text-decoration: none;
+}
 
 .profile__container{
     display: flex;

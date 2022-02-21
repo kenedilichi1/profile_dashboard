@@ -1,0 +1,27 @@
+@media only screen and (min-width:768px) {
+    .profile__picture >img{
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
+
+    .profile__container{
+        
+        margin-top: 12%;
+        
+    }
+}
+
+@media only screen and (min-width:990px) {
+    .profile__picture >img{
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+    }
+
+    .profile__container{
+        
+        margin-top: 10%;
+        
+    }
+}

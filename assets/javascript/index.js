@@ -15,37 +15,48 @@
     function userProfile(data) {
 
         let mainContainer = document.getElementById('main__container');
-        const user = data
-            .map(users=>{
+        const users = data
+            .map(user=>{
                 return `
                     
-                        <div class = "profile__container">
-                            <div class = "profile__picture"><img src = "../assets/images/profile.jpg"/></div>
+                        <a href='second_page.html?user=${user.username}'>
+                            <div class = "profile__container">
+                                <div class = "profile__picture">
+                                    <img src = "../assets/images/profile.jpg"/>
+                                </div>
 
-                            <div class = "paragraph">
-                                <p> 
-                                    <h4> Name:</h4> 
-                                    <h5>${users.name}</h5> 
-                                </p>
-                                <p> 
-                                    <h4>Username:</h4> 
-                                    <h5>${users.username}</h5>
-                                </p>
-                                <p> 
-                                    <h4> CatchPhrase: </h4> 
-                                    <h5>${users.company.catchPhrase}</h5>
-                                </p>
-                                
+                                <div class = "paragraph">
+                                    <p> 
+                                        <h4> Name:</h4> 
+                                        <h5>${user.name}</h5> 
+                                    </p>
+                                    <p> 
+                                        <h4>Username:</h4> 
+                                        <h5>${user.username}</h5>
+                                    </p>
+                                    <p> 
+                                        <h4> CatchPhrase: </h4> 
+                                        <h5>${user.company.catchPhrase}</h5>
+                                    </p>
                                     
-                                
+                                        
+                                    
+                                </div>
                             </div>
-                        </div>
-                        
+                            
+                        </a>
                     
                     <hr/>
                 `;
             })
             .join("");
-        mainContainer.insertAdjacentHTML('afterbegin', user)
+        mainContainer.insertAdjacentHTML('afterbegin', users)
+
+        // saving the data to localstorage
+        localStorage.setItem('users',JSON.stringify(data))
+
+        
+
+        // document.location.href = userUrl
     }
 }())

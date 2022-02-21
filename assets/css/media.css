@@ -3,13 +3,24 @@
         background: linear-gradient(183deg, rgba(3,148,184,1) 6%, rgba(76,150,237,1) 84%);
     }
 
+    #main__container > a{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 
     #main__container{
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
         justify-content: center;
         align-items: center;
+    }
+
+    #whole__profile-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .profile__container{
@@ -22,6 +33,7 @@
 }
 
 @media only screen and (min-width:990px){
+    
     .profile__container{
         width: 70%;
         height: 300px;
