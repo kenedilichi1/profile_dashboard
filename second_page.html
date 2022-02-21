@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Profile</title>
+    <link rel="stylesheet" href="./assets/css/second.css"/>
+    <link rel="stylesheet" href="./assets/css/second_media.css"/>
+</head>
+<body>
+    <script>
+        // gets the stored item (users) from localcstorage
+        let getLocalStorage = localStorage.getItem('users');
+       
+        // get the windows location
+        const params = new URLSearchParams(window.location.search);
+       
+        // getting the user
+        let newParams = params.get('user');
+        
+        // convert json string to json object
+        let data = JSON.parse(getLocalStorage);
+       
+
+
+        // loop through the array object and pass the items to an empty object;
+        let personalProfile ={};
+        for (let i = 0; i< data.length; i++){
+            if (data[i].username === newParams){
+                
+                personalProfile = data[i]
+            }
+
+            
+        };
+        console.log(personalProfile)
+
+            // creating html tags and passing the "personalProfile.key" to get each object item 
+                   let userHtml= ` <div id = "second__page-main__container">
+                        <div class = "profile__container">
+                            <div class = "profile__picture">
+                                <img src = "../assets/images/profile.jpg"/>
+                            </div>
+
+                            <div class = "profile_details">
+                                <p> 
+                                    <h4> Email:</h4> 
+                                    <h5>${personalProfile.email}</h5> 
+                                </p>
+
+                                <p> 
+                                    <h4> Phonenumber:</h4> 
+                                    <h5>${personalProfile.phone}</h5> 
+                                </p>
+
+                                <p> 
+                                    <h4> Address:</h4> 
+                                    <h5>${personalProfile.address.city}</h5> 
+                                </p>
+
+                                <p> 
+                                    <h4> Latitude / Longitude :</h4> 
+                                    <h5>${personalProfile.address.geo.lat}/ ${personalProfile.address.geo.lng}</h5> 
+
+                                </p>
+
+                               
+
+                                <p> 
+                                    <h4> Company:</h4> 
+                                    <h5>${personalProfile.company.name}</h5> 
+                                </p>
+                        </div>
+                    </div>
+                `;
+             
+        document.body.insertAdjacentHTML('afterbegin', userHtml)
+        
+            
+        
+
+            
+    </script>
+</body>
+</html>
